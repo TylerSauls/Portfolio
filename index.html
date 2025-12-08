@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="snow"></div>
+
+  <nav>
+    <a href="#landing">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="landing">
+    <h1>Tyler Sauls</h1>
+    <p>My Communications Lab Portfolio</p>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="project-fullscreen">
+      <div class="project-screenshot slide" data-direction="left">
+        <a href="https://tylersauls.github.io/Assignment-1-The-Freshman-Experienc-/" target="_blank">
+          <img src="media/project1.png" alt="Project Screenshot"/>
+        </a>
+      </div>
+      <div class="project-text slide" data-direction="right">
+        <h3>The Freshman Experience</h3>
+        <p>"The Freshman Experience" is a website showcasing my short film made for the class, revolving around a freshman becoming accustom to university life.</p>
+        <a href="https://tylersauls.github.io/Assignment-1-The-Freshman-Experienc-/" target="_blank" class="project-button">View Project</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-fullscreen">
+      <div class="project-text slide" data-direction="left">
+        <h3>Caught Red-Handed</h3>
+        <p>"Caught Red-Handed" is an interactive web comic telling a story about two students who are suspected to have killed their professor.</p>
+        <a href="https://ss20675-beep.github.io/comic-interactive/" target="_blank" class="project-button">View Project</a>
+      </div>
+      <div class="project-screenshot slide" data-direction="right">
+        <a href="https://ss20675-beep.github.io/comic-interactive/" target="_blank">
+          <img src="media/project2.jpg" alt="Project Screenshot"/>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-fullscreen">
+      <div class="project-screenshot slide" data-direction="left">
+        <a href="https://kimshota.github.io/" target="_blank">
+          <img src="media/project3.png" alt="Project Screenshot"/>
+        </a>
+      </div>
+      <div class="project-text slide" data-direction="right">
+        <h3>Sound Detective</h3>
+        <p>"Sound Detective" takes the user on a journey to a world where all the sounds have disappeared and they are recruited to restore it, beginning with some popular songs.</p>
+        <a href="https://kimshota.github.io/" target="_blank" class="project-button">View Project</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-fullscreen">
+      <div class="project-text slide" data-direction="left">
+        <h3>The Watcher</h3>
+        <p>"The Watcher" is a film about a student being stalked. Eventually, she confronts her stalker and the user is given the choice of what happens next, with each option leading to very different outcomes.</p>
+        <a href="https://sma9389.github.io/movie/" target="_blank" class="project-button">View Project</a>
+      </div>
+      <div class="project-screenshot slide" data-direction="right">
+        <a href="https://sma9389.github.io/movie/" target="_blank">
+          <img src="media/project4.png" alt="Project Screenshot"/>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+
+    <div class="about-container">
+      <img src="media/pfp.jpg" alt="A photo of me" class="about-photo" />
+
+      <p>
+        Hi! I'm Tyler Sauls. I'm currently studying Computer Science and Interactive Media at New York University Abu Dhabi. All the projects shown on the website were done in my Communications Lab class taught by Professor Evi Mansor. If you wish to reach out, below is a way to reach me!</p>
+    </div>
+  </section>
+
+<section id="contact">
+  
+  <div class="form-container">
+    <h2>Contact Me</h2> 
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter title" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Enter message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <!-- Status message will appear here -->
+    <!--<p id="form-status" style="margin-top:10px;"></p> -->
+  </div>
+</section>
+
+  <!-- EmailJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
