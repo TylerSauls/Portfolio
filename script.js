@@ -1,4 +1,4 @@
-// Smooth scroll for navbar
+// Navbar Scroll
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -9,7 +9,7 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// Slide-in animations for projects
+// Animations
 const options = {
   root: null,
   rootMargin: '0px 0px -18% 0px',
@@ -33,7 +33,7 @@ document.querySelectorAll('.project-fullscreen').forEach(row => {
   observer.observe(row);
 });
 
-// Snow effect using Particles.js
+// Snow effect
 document.addEventListener('DOMContentLoaded', function(){
     var script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 (function() {
-  emailjs.init("C_ZeXVsLMR2_lwzDA"); // Replace with your EmailJS public key
+  emailjs.init("C_ZeXVsLMR2_lwzDA"); 
 })();
 
 // EmailJS Contact Form
@@ -83,3 +83,4 @@ window.onload = function() {
       });
   });
 };
+
