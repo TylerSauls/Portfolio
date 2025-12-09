@@ -1,0 +1,236 @@
+/* Landing page with background image */ 
+#landing {
+  height: 100vh; /* full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* text visible on image */
+
+  background-image: url('media/bg.jpg'); /* replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional parallax effect */
+  position: relative; /* for stacking with snow */
+}
+
+/* Snow container */
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* allows clicks through snow */
+  z-index: 1000;        /* stays above content */
+}
+
+/* Example content styling */
+body {
+  font-family: "Red Hat Display", sans-serif;
+  color: rgb(255, 255, 255);
+  margin: 0;
+
+    /* Background image */
+  background-image: url('media/bg.jpg'); /* Replace with your image path */
+  background-size: cover;       /* Make it cover the entire page */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Avoid tiling */
+  background-attachment: fixed; /* Keeps image fixed when scrolling */
+}
+
+/* style.css - updated for reliable scroll-triggered slide-ins */
+
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+nav a { text-decoration: none; font-weight: bold; color: #123; }
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#dff3ff, #a4c9e6);
+  text-align: center;
+  padding-top: 60px; /* make space for fixed nav */
+}
+
+header h1 { 
+  font-size: 4rem; 
+}
+
+header p { 
+  font-size: 1.3rem; 
+}
+
+section { 
+  padding: 80px 10%; 
+}
+h2 { 
+  text-align: center; 
+  font-size: 2.5rem; 
+  margin-bottom: 40px;
+ }
+
+.project-fullscreen {
+  /* no fixed 100vh — let content flow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 80px 20px; /* vertical spacing so element can enter viewport */
+  flex-wrap: wrap;
+}
+
+/* PROJECT BOXES */
+.project-screenshot, .project-text {
+  background: rgb(133, 217, 235);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  flex: 1 1 380px; /* responsive: allow wrapping on small screens */
+  min-width: 280px;
+}
+
+/* image responsiveness */
+.project-screenshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Hover zoom effect */
+.project-screenshot img {
+  transition: transform 0.4s ease;
+  transform-origin: center;
+}
+
+.project-screenshot:hover img {
+  transform: scale(1.06);
+}
+
+
+/* SLIDE ANIMATIONS */
+/* start hidden & off-screen */
+.slide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(0); /* will be overridden by data-direction below */
+  transition: transform 700ms cubic-bezier(.2,.9,.25,1), opacity 700ms ease;
+  will-change: transform, opacity;
+}
+
+/* initial offset depending on direction */
+.slide[data-direction="left"] { transform: translateX(-120px); }
+.slide[data-direction="right"] { transform: translateX(120px); }
+
+/* visible state */
+.show {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* use inline style in JS for staggered delays; fallback here */
+.slide[data-delay="0"] { transition-delay: 0ms; }
+.slide[data-delay="1"] { transition-delay: 100ms; }
+.slide[data-delay="2"] { transition-delay: 200ms; }
+
+/* Project Button Styling */
+.project-button {
+  display: inline-block; /* allows padding and margin */
+  margin-top: 15px;      /* space above the button */
+  padding: 8px 15px;     /* size of the button */
+  background-color: rgb(72, 207, 238); /* A dark background color */
+  color: #fff;           /* White text */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px;    /* Rounded corners */
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+  background-color: rgb(0, 161, 198); /* Slightly darker on hover */
+}
+
+/* Ensure the project text container allows for button placement */
+.project-text {
+  /* This is crucial: ensures content aligns well */
+  display: flex;
+  flex-direction: column; 
+}
+
+/* About Me with photo */
+.about-container {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-photo {
+  width: 230px;
+  height: 230px;
+  object-fit: contain;  /* fit the whole image inside the circle */
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background-color: #fff; /* optional: fills empty space */
+}
+
+/* Contact Section */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.form-container {
+  width: 50%;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+button[type=submit] {
+  background-color: rgb(133, 217, 235);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: rgb(105, 190, 210);
+}
